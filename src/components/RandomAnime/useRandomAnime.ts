@@ -1,15 +1,5 @@
 import { useEffect, useState } from 'react';
-
-interface Anime {
-  images: {
-    jpg: {
-      image_url: string;
-      small_image_url: string;
-      large_image_url: string;
-    };
-  };
-  title: string;
-}
+import type { Anime } from 'utils/types/Anime';
 
 export const useRandomAnime = () => {
   const [anime, setAnime] = useState<Anime>();

@@ -1,13 +1,13 @@
-import { Center, Container } from '@chakra-ui/react';
+import { Flex } from '@chakra-ui/react';
 import { RandomAnime } from 'components/RandomAnime';
+import { WatchList } from 'components/WatchList';
 
 function App() {
   return (
-    <Center>
-      <Container mt="8">
-        <RandomAnime />
-      </Container>
-    </Center>
+    <Flex height="100vh" p="2">
+      <RandomAnime />
+      <WatchList />
+    </Flex>
   );
 }
 

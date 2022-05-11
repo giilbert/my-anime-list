@@ -1,20 +1,44 @@
-import { Button, Heading, Image, VStack } from '@chakra-ui/react';
+import {
+  Box,
+  Divider,
+  Heading,
+  HStack,
+  IconButton,
+  Image,
+} from '@chakra-ui/react';
 import React from 'react';
-import { ArrowForwardIcon } from '@chakra-ui/icons';
+import { ArrowForwardIcon, PlusSquareIcon } from '@chakra-ui/icons';
 import { useRandomAnime } from './useRandomAnime';
+import * as store from 'utils/store';
 
 export const RandomAnime: React.FC = () => {
   const { anime, refetch } = useRandomAnime();
 
   return (
-    <VStack>
-      <Button onClick={() => refetch(true)} mb="2" colorScheme="green" px="8">
-        <ArrowForwardIcon />
-      </Button>
+    <Box width="container.md">
+      <HStack mb="2">
+        <IconButton
+          onClick={() => store.addOne(anime!)}
+          colorScheme="orange"
+          size="lg"
+          aria-label="Add to watch list"
+        >
+          <PlusSquareIcon />
+        </IconButton>
 
-      <Image src={anime?.images.jpg.image_url} />
+        <IconButton
+          onClick={() => refetch(true)}
+          colorScheme="green"
+          size="lg"
+          aria-label="Next"
+        >
+          <ArrowForwardIcon />
+        </IconButton>
 
-      <Heading fontSize="xl">{anime?.title}</Heading>
-    </VStack>
+        <Heading fontSize="2xl">{anime?.title}</Heading>
+      </HStack>
+
+      <Image src={anime?.images.jpg.large_image_url} width="300px" />
+    </Box>
   );
 };
