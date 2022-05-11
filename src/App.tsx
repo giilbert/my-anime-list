@@ -1,11 +1,11 @@
-import { Center, Container, Heading } from '@chakra-ui/react';
-import React from 'react';
+import { Center, Container } from '@chakra-ui/react';
+import { RandomAnime } from 'components/RandomAnime';
 
 function App() {
   return (
     <Center>
       <Container mt="8">
-        <Heading>Hello world</Heading>
+        <RandomAnime />
       </Container>
     </Center>
   );
