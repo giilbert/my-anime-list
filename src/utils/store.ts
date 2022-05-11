@@ -41,3 +41,15 @@ export const addOne = (anime: Anime) => {
   localStorage.setItem('watchlist', JSON.stringify([...now, anime]));
   emitter.emit('update');
 };
+
+export const removeOne = (title: string) => {
+  const current = getAll();
+  const index = current.findIndex((a) => a.title === title);
+
+  current.splice(index, 1);
+
+  localStorage.setItem('watchlist', JSON.stringify(current));
+  emitter.emit('update');
+
+  return current;
+};

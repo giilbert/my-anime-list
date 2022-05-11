@@ -1,11 +1,4 @@
-import {
-  Box,
-  Divider,
-  Heading,
-  HStack,
-  IconButton,
-  Image,
-} from '@chakra-ui/react';
+import { Box, HStack, IconButton, Image, Text } from '@chakra-ui/react';
 import React from 'react';
 import { ArrowForwardIcon, PlusSquareIcon } from '@chakra-ui/icons';
 import { useRandomAnime } from './useRandomAnime';
@@ -15,7 +8,7 @@ export const RandomAnime: React.FC = () => {
   const { anime, refetch } = useRandomAnime();
 
   return (
-    <Box width="container.md">
+    <Box width="500px">
       <HStack mb="2">
         <IconButton
           onClick={() => store.addOne(anime!)}
@@ -35,7 +28,7 @@ export const RandomAnime: React.FC = () => {
           <ArrowForwardIcon />
         </IconButton>
 
-        <Heading fontSize="2xl">{anime?.title}</Heading>
+        <Text fontSize="xl">{anime?.title}</Text>
       </HStack>
 
       <Image src={anime?.images.jpg.large_image_url} width="300px" />

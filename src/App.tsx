@@ -4,7 +4,7 @@ import { WatchList } from 'components/WatchList';
 
 function App() {
   return (
-    <Flex height="100vh" p="2">
+    <Flex height="100vh" p="8">
       <RandomAnime />
       <WatchList />
     </Flex>
